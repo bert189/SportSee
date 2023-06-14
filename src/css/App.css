@@ -125,8 +125,8 @@ body {
 .datas .score,
 .datas .count {
     border-radius: 5px;
-    background-color: lightgray;
-    /* background-color: #FBFBFB; */
+    /* background-color: lightgray; */
+    background-color: #FBFBFB;
 
 }
 
