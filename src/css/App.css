@@ -1,0 +1,202 @@
+
+/* GENERAL */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: Roboto, sans-serif;
+    min-width: 1440px;
+}
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #020203;
+    color: white;
+    padding: 20px 30px 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 95px;
+}
+
+.header .logo {
+    height: 58px;
+}
+
+.header nav {
+    width: 66vw;
+    margin-right: 80px;
+}
+
+.header nav ul {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+
+/* Reusable Components */
+
+.icon {
+    height: 64px;
+    width: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    font-size: 32px;
+}
+
+
+/* SIDEBAR */
+
+.main {
+    display: flex;
+    height: calc(100vh - 95px); /* 95px = header height */
+}
+
+.sidebar {
+    width: 120px;
+    background-color: #020203;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 200px;
+}
+
+.side-nav .icon {
+    margin-bottom: 20px;
+}
+
+.sidebar .copyright {
+    color: white;
+    transform: rotate(270deg);
+    width: 150px;
+    font-size: 12px;
+    position: relative;
+    bottom: 135px;
+    right: 5px;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+    width: calc(100vw - 120px);
+    padding: 60px 110px 90px 90px;
+}
+
+/* Title */
+
+.title {
+    height: 180px;
+}
+
+.title h1 {
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.title .firstname {
+    color: #FF0101;
+}
+
+.title h2 {
+    font-size: 18px;
+    padding-bottom: 70px;
+}
+
+/* DATAS */
+
+.datas {
+    height: calc(100% - 180px); /* 180px = height title */
+    display: flex;
+    justify-content: space-between;
+}
+
+.datas .activity,
+.datas .sessions,
+.datas .performance,
+.datas .score,
+.datas .count {
+    border-radius: 5px;
+    background-color: lightgray;
+    /* background-color: #FBFBFB; */
+
+}
+
+/* CHARTS */
+
+.charts-wrapper {
+    width: 840px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.charts-wrapper .activity {
+    height: 245px;
+    width: 100%;
+    /* background-color: #FBFBFB; */
+}
+
+.charts-wrapper .sessions,
+.charts-wrapper .performance,
+.charts-wrapper .score {
+    height: 245px;
+    width: 265px;
+    /* background-color: #FBFBFB; */
+}
+
+/* ACTIVITY */
+
+/* SESSIONS */
+
+/* PERFORMANCE */
+
+/* SCORE */
+
+/* COUNTS */
+
+.counts-wrapper {
+    width: 260px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.count {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 26px;
+    /* background-color: #FBFBFB; */
+}
+
+.counts-wrapper .icon {
+    font-size: 24px;
+    height: 60px;
+    width: 60px;
+    border-radius: 4px;
+}
+
+.count .name-value-wrapper {
+    margin-left: 25px;
+}
+
+.count .value {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.count .name {
+    font-size: 14px;
+}
