@@ -1,7 +1,7 @@
 
 import Header from './components/Header';
-import Dashboard from './components/Dashboard';
 import SideBar from './components/SideBar';
+import HomePage from './components/HomePage';
 import './css/reset.css';
 import './css/App.css';
 
@@ -11,7 +11,7 @@ function App() {
 			<Header />
 			<main className="main">
 				<SideBar />
-				<Dashboard />
+				<HomePage />
 			</main>	
 		</div>
 	);
