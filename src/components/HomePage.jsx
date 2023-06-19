@@ -9,8 +9,7 @@ function HomePage() {
     return (
         <main className="homepage">
             <Title firstName={firstName} />
-            <Dashboard
-            board />
+            <Dashboard />
         </main>     
 
     )

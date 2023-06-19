@@ -21,7 +21,7 @@ function Dashboard() {
         {
             name: "Calories",
             value: calorieCount,
-            unit: "kCal",
+            unit: "Kcal",
             icon: "fire",
             color: "#FF0000"
         },
@@ -59,7 +59,14 @@ function Dashboard() {
             </div>
             <div className="counts-wrapper">
                 {counts && counts.map((count, index) => {
-                    return <Count key={index} name={count.name} value={count.value} unit={count.unit} icon={count.icon} color={count.color}/>
+                    return <Count
+                        key={index}
+                        name={count.name}
+                        value={count.value}
+                        unit={count.unit}
+                        icon={count.icon}
+                        color={count.color}
+                    />
                 })}
             </div>
             

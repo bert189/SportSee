@@ -43,47 +43,49 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 const data = [
 	{
-		name: 'L',
-		pv: 30,
+		day: 'L',
+		minutes: 30,
 	},
 	{
-		name: 'M',
-		pv: 40,
+		day: 'M',
+		minutes: 40,
 	},
 	{
-		name: 'M',
-		pv: 50,
+		day: 'M',
+		minutes: 50,
 	},
 	{
-		name: 'J',
-		pv: 30,
+		day: 'J',
+		minutes: 30,
 	},
 	{
-		name: 'V',
-		pv: 30,
+		day: 'V',
+		minutes: 30,
 	},
 	{
-		name: 'S',
-		pv: 50,
+		day: 'S',
+		minutes: 50,
 	},
 	{
-		name: 'D',
-		pv: 50,
+		day: 'D',
+		minutes: 50,
 	},
 ];
 
 
-const CustomTooltip = ({ active, payload, label }) => {
+function SessionsTooltip({ active, payload }) {
 	if (active && payload && payload.length) {
-	  return (
-		<div className="custom-tooltip">
-		  <p>{`${payload[0].value} min`}</p>
-		</div>
-	  );
+		return (
+			<div className="sessions-tooltip">
+				<p>{`${payload[0].value} min`}</p>
+			</div>
+		);
 	}
-  
+
 	return null;
-  };
+};
+
+
 
 function SessionsChart() {
 	return (
@@ -93,22 +95,20 @@ function SessionsChart() {
 				margin={{ top: 65, right: 25, bottom: 15, left: 25 }}
 			>
 				<XAxis
-					dataKey="name"
+					dataKey="day"
 					axisLine={false}
 					tickLine={false}
-					stroke='#ffffff'
+					stroke="#ff6060"
 				/>
 				<Tooltip
-					// separator=""
-					content={CustomTooltip}
-					// label=""
-					// labelFormatter={(pv) => ""}
+					content={<SessionsTooltip />}
 					formatter={(value) => `${value} min`}
 					itemStyle={{ color: '#000000' }}
+					cursor={{stroke: "white", strokeWidth: 1, strokeOpacity: 0.5 }} // stroke: "#E60000"
 				/>
 				<Line
 					type="monotone"
-					dataKey="pv"
+					dataKey="minutes"
 					stroke="#ffffff"
 					strokeWidth={2}
 					dot={false}

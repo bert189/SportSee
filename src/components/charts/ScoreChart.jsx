@@ -27,7 +27,11 @@ function ScoreChart({ score }) {
 					dataKey="value"
 				>
 					{data.map((entry, index) => (
-						<Cell className="pie-cell" key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+						<Cell
+							className="pie-cell"
+							key={`cell-${index}`}
+							fill={COLORS[index % COLORS.length]}
+						/>
 					))}
 				</Pie>				
 			</PieChart>

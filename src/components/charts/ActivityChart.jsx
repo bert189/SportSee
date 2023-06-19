@@ -83,6 +83,52 @@ const data = [
 	},
 ];
 
+
+function ActivityTooltip({ active, payload }) {
+	if (active && payload && payload.length) {
+		return (
+			<div className="activity-tooltip">
+				<p>{`${payload[0].value} kg`}</p>
+				<p>{`${payload[1].value} Kcal`}</p>
+			</div>
+		);
+	}
+
+	return null;
+};
+
+
+const legends = [
+	{
+		name: 'Poids (kg)',
+		color: '#000000'
+	},
+	{
+		name: 'Calories brûlées (Kcal)',
+		color: '#E60000'
+	}
+]
+
+function ActivityLegend({legends}) {
+
+	if (legends) {
+
+		return (			
+			<div className="activity-legends">
+				{legends.map((legend) => (
+					<div key={legend.name} className="activity-legend">
+						<div className="legend-dot" style={{background: legend.color}}></div>
+						<div className="legend-name">{legend.name}</div>
+					</div>
+				))}
+			</div>			
+		);
+	}
+
+	return null
+}
+
+
 function ActivityChart() {
 
 	return (
@@ -112,14 +158,19 @@ function ActivityChart() {
 					fontWeight={700}
 					tickLine={false}
 					axisLine={false}
+					type='number'
+					domain={[67, 71]}
 				/>
 				<YAxis
 					yAxisId="right"
 					orientation="left"
 					hide
 				/>
-				<Tooltip />
+				<Tooltip
+					content={<ActivityTooltip />}
+				/>
 				<Legend
+					content={<ActivityLegend legends={legends} />}
 					align="right"
 					verticalAlign="top"
 					height={50}
@@ -131,13 +182,13 @@ function ActivityChart() {
 				<Bar
 					yAxisId="left"
 					dataKey="kilogram"
-					fill="#000000"
+					fill={legends[0].color}
 					barSize={7}
 				/>
 				<Bar
 					yAxisId="right"
 					dataKey="calories"
-					fill="#FF0000"
+					fill={legends[1].color}
 					barSize={7}
 				/>
 			</BarChart>
