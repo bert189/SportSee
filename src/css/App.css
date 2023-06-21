@@ -119,11 +119,7 @@ body {
     justify-content: space-between;
 }
 
-.dashboard .activity,
-.dashboard .sessions,
-.dashboard .performance,
-.dashboard .score,
-.dashboard .count {
+.dashboard .card {
     border-radius: 5px;
     background-color: #f5f5f5;
 }
@@ -151,18 +147,19 @@ body {
     width: 265px;
 }
 
+.chart-title {
+    position: absolute;
+    padding: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    padding-right: 70px;
+}
+
 
 /* ACTIVITY */
 
 .activity {
     position: relative;
-}
-
-.activity h1 {
-    position: absolute;
-    padding: 25px;
-    font-size: 16px;
-    font-weight: 500;
 }
 
 .activity-tooltip {
@@ -210,19 +207,6 @@ body {
     position: relative;
 }
 
-
-.sessions h1 {
-    position: absolute;
-    color: #ff6060;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 25px;
-}
-
-.sessions h1 span {
-    display: block;
-}
-
 .sessions .sessions-tooltip {
     background-color: white;
     font-size: 10px;
@@ -246,13 +230,6 @@ body {
     transform: rotate(90);
 }
 
-.score h1 {
-    position: absolute;
-    padding: 25px;
-    font-size: 16px;
-    font-weight: 500;
-}
-
 .score .goal {
     position: absolute;
     top: 33.3%;
@@ -262,7 +239,7 @@ body {
     line-height: 25px;
 }
 
-.score span {
+.score .goal span {
     display: block;
     font-weight: 700;
     font-size: 24px;

@@ -6,11 +6,18 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 function ScoreChart({ score }) {
 
 	const data = [
-		{ name: 'Group A', value: score },
-		{ name: 'Group B', value: (100 - score) },
+		{
+			name: 'score',
+			value: score ,
+			color: '#E60000'
+		},
+		{
+			name: 'Group B',
+			value: (100 - score),
+			color: '#FBFBFB'
+		}
 	];
 
-	const COLORS = ['#E60000', '#FBFBFB'];
 
 	return (
 		<ResponsiveContainer width="100%" height="100%">
@@ -30,7 +37,7 @@ function ScoreChart({ score }) {
 						<Cell
 							className="pie-cell"
 							key={`cell-${index}`}
-							fill={COLORS[index % COLORS.length]}
+							fill={entry.color}
 						/>
 					))}
 				</Pie>				

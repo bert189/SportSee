@@ -2,87 +2,6 @@ import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
-// {
-//   "data": {
-//       "userId": 18,
-//       "sessions": [
-//           {
-//               "day": "2020-07-01",
-//               "kilogram": 70,
-//               "calories": 240
-//           },
-//           {
-//               "day": "2020-07-02",
-//               "kilogram": 69,
-//               "calories": 220
-//           },
-//           {
-//               "day": "2020-07-03",
-//               "kilogram": 70,
-//               "calories": 280
-//           },
-//           {
-//               "day": "2020-07-04",
-//               "kilogram": 70,
-//               "calories": 500
-//           },
-//           {
-//               "day": "2020-07-05",
-//               "kilogram": 69,
-//               "calories": 160
-//           },
-//           {
-//               "day": "2020-07-06",
-//               "kilogram": 69,
-//               "calories": 162
-//           },
-//           {
-//               "day": "2020-07-07",
-//               "kilogram": 69,
-//               "calories": 390
-//           }
-//       ]
-//   }
-// }
-
-const data = [
-	{
-		day: '01/07',
-		kilogram: 70,
-		calories: 240,
-	},
-	{
-		day: '02/07',
-		kilogram: 69,
-		calories: 220,
-	},
-	{
-		day: '03/07',
-		kilogram: 70,
-		calories: 280,
-	},
-	{
-		day: '04/07',
-		kilogram: 70,
-		calories: 500,
-	},
-	{
-		day: '05/07',
-		kilogram: 69,
-		calories: 160,
-	},
-	{
-		day: '06/07',
-		kilogram: 69,
-		calories: 162,
-	},
-	{
-		day: '07/07',
-		kilogram: 69,
-		calories: 390,
-	},
-];
-
 
 function ActivityTooltip({ active, payload }) {
 	if (active && payload && payload.length) {
@@ -97,17 +16,6 @@ function ActivityTooltip({ active, payload }) {
 	return null;
 };
 
-
-const legends = [
-	{
-		name: 'Poids (kg)',
-		color: '#000000'
-	},
-	{
-		name: 'Calories brûlées (Kcal)',
-		color: '#E60000'
-	}
-]
 
 function ActivityLegend({legends}) {
 
@@ -129,7 +37,7 @@ function ActivityLegend({legends}) {
 }
 
 
-function ActivityChart() {
+function ActivityChart({data, legends}) {
 
 	return (
 		<ResponsiveContainer width="100%" height="100%">

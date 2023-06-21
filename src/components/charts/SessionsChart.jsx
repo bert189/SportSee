@@ -2,76 +2,6 @@ import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
-// {
-//     "data": {
-//         "userId": 18,
-//         "sessions": [
-//             {
-//                 "day": 1,
-//                 "sessionLength": 30
-//             },
-//             {
-//                 "day": 2,
-//                 "sessionLength": 40
-//             },
-//             {
-//                 "day": 3,
-//                 "sessionLength": 50
-//             },
-//             {
-//                 "day": 4,
-//                 "sessionLength": 30
-//             },
-//             {
-//                 "day": 5,
-//                 "sessionLength": 30
-//             },
-//             {
-//                 "day": 6,
-//                 "sessionLength": 50
-//             },
-//             {
-//                 "day": 7,
-//                 "sessionLength": 50
-//             }
-//         ]
-//     }
-// }
-
-
-
-
-const data = [
-	{
-		day: 'L',
-		minutes: 30,
-	},
-	{
-		day: 'M',
-		minutes: 40,
-	},
-	{
-		day: 'M',
-		minutes: 50,
-	},
-	{
-		day: 'J',
-		minutes: 30,
-	},
-	{
-		day: 'V',
-		minutes: 30,
-	},
-	{
-		day: 'S',
-		minutes: 50,
-	},
-	{
-		day: 'D',
-		minutes: 50,
-	},
-];
-
 
 function SessionsTooltip({ active, payload }) {
 	if (active && payload && payload.length) {
@@ -86,8 +16,8 @@ function SessionsTooltip({ active, payload }) {
 };
 
 
-
-function SessionsChart() {
+function SessionsChart({data}) {
+	
 	return (
 		<ResponsiveContainer width="100%" height="100%">
 			<LineChart

@@ -4,7 +4,7 @@ import Icon from "./Icon";
 function Count({name, value, unit, icon, color}) {
     
     return (
-        <div className="count">
+        <div className="count card">
             <Icon icon={icon} color={color} lightenBackground />
             <div className="name-value-wrapper">
                 <div className="value">{value}{unit}</div>

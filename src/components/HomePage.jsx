@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "./Title";
+import Hello from "./Hello";
 import Dashboard from "./Dashboard";
 
 function HomePage() {
@@ -8,7 +8,7 @@ function HomePage() {
 
     return (
         <main className="homepage">
-            <Title firstName={firstName} />
+            <Hello firstName={firstName} />
             <Dashboard />
         </main>     
 
