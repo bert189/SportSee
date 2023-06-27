@@ -1,7 +1,7 @@
 import React from "react";
 
 import Logo from "./Logo";
-import logoSportsee from "../assets/logo-sportsee.png";
+import logoSportsee from "../../assets/logo-sportsee.png";
 import Nav from "./Nav";
 
 

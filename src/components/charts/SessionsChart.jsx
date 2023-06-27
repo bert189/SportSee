@@ -40,6 +40,7 @@ function SessionsChart({data}) {
 					type="monotone"
 					dataKey="minutes"
 					stroke="#ffffff"
+					opacity={0.75}
 					strokeWidth={2}
 					dot={false}
 				/>

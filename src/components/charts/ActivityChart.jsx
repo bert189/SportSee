@@ -67,7 +67,7 @@ function ActivityChart({data, legends}) {
 					tickLine={false}
 					axisLine={false}
 					type='number'
-					domain={[67, 71]}
+					domain={['dataMin - 2', 'dataMax + 1']}
 				/>
 				<YAxis
 					yAxisId="right"
@@ -92,12 +92,14 @@ function ActivityChart({data, legends}) {
 					dataKey="kilogram"
 					fill={legends[0].color}
 					barSize={7}
+					radius={[4, 4, 0, 0]}
 				/>
 				<Bar
 					yAxisId="right"
 					dataKey="calories"
 					fill={legends[1].color}
 					barSize={7}
+					radius={[4, 4, 0, 0]}
 				/>
 			</BarChart>
 		</ResponsiveContainer>

@@ -1,8 +1,8 @@
 import React from 'react';
-import PerformanceChart from './charts/PerfomanceChart';
+import PerformanceChart from '../charts/PerfomanceChart';
 
 
-function Performance() {
+function Performance({data}) {
 
 	// {
 	// 	"data": {
@@ -44,32 +44,32 @@ function Performance() {
 	// 	}
 	// }
 	
-    const data = [
-        {
-            subject: 'Intensité',
-            value: 110,
-        },
-        {
-            subject: 'Vitesse',
-            value: 220,
-        },
-        {
-            subject: 'Force',
-            value: 80,
-        },
-        {
-            subject: 'Endurance',
-            value: 80,
-        },
-        {
-            subject: 'Energie',
-            value: 240,
-        },
-        {
-            subject: 'Cardio',
-            value: 200,
-        },        
-    ];
+    // const mockData = [
+	// 	{
+    //         kind: 'Cardio',
+    //         value: 200,
+    //     },
+	// 	{
+    //         kind: 'Energie',
+    //         value: 240,
+    //     },
+	// 	{
+    //         kind: 'Endurance',
+    //         value: 80,
+    //     },
+	// 	{
+    //         kind: 'Force',
+    //         value: 80,
+    //     },
+    //     {
+	// 		kind: 'Vitesse',
+    //         value: 220,
+    //     },
+	// 	{
+	// 		kind: 'Intensité',
+	// 		value: 110,
+	// 	},
+    // ];
 
 	return (
 		<div className="performance card">

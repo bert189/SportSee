@@ -12,18 +12,19 @@ function PerformanceChart({data}) {
                 cy="50%"
                 outerRadius="75%"
                 data={data}
-                startAngle={90}
-                endAngle={-270}
+                startAngle={30}
+                endAngle={-330}
             >
                 <PolarGrid
                     radialLines={false}
                 />
                 <PolarAngleAxis
-                    dataKey="subject"
+                    dataKey="kind"
                     fontSize={12}
-                    fontWeight={500}
+                    fontWeight={400}
                     tickLine={false}
                     stroke="#ffffff"
+                    dy={3}
                 />
                 <PolarRadiusAxis
                     angle="180"
