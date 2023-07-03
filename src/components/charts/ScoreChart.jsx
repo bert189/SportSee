@@ -38,6 +38,7 @@ function ScoreChart({ score }) {
 							className="pie-cell"
 							key={`cell-${index}`}
 							fill={entry.color}
+							cornerRadius={6}
 						/>
 					))}
 				</Pie>				

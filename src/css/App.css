@@ -96,7 +96,7 @@ body {
 
 .page {
     width: calc(100vw - 120px);
-    padding: 60px 110px 90px 90px;
+    padding: 60px 90px;
 }
 
 /* HOME */
@@ -113,7 +113,7 @@ body {
 .home-page h1 {
     font-size: 36px;
     font-weight: 500;
-    margin: 120px 0;
+    margin: 100px 0 50px;
 }
 
 .home-page ul {
@@ -135,34 +135,86 @@ body {
 
 }
 
+/* switch provenance data */
+
+.switch-wrapper {
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.switch-wrapper h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.toggle-switch {
+    background-color: #E60000;
+    color: white;
+    padding: 5px;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 40px;
+}
+
+.toggle-switch span {
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: color 150ms;
+}
+
+.source-selected {
+    background-color: white;
+    color: #E60000;
+}
+
+.switch-wrapper p {
+    padding-top: 3px;
+    font-size: 10px;
+}
+.switch-wrapper p a {
+    color: #E60000;
+}
+
 
 /* USER */
 
 /* Title */
 
-.title {
-    height: 180px;
+.hello-title {
+    height: 150px;
+    width: 1120px;
 }
 
-.title h1 {
+.hello-title h1 {
     font-size: 48px;
     font-weight: 500;
     margin-bottom: 30px;
 }
 
-.title .firstname {
+.hello-title .firstname {
     color: #FF0101;
 }
 
-.title h2 {
+.hello-title h2 {
     font-size: 18px;
-    padding-bottom: 70px;
+}
+
+.hello-title .switch-wrapper {
+    position: absolute;
+    top: 160px;
+    left: 830px;
+    transform: scale(0.85);
 }
 
 /* DASHBOARD */
 
 .dashboard {
-    height: calc(100% - 180px); /* 180px = height title */
+    height: calc(245px * 2 + 20px);
     width: 1120px;
     display: flex;
     justify-content: space-between;

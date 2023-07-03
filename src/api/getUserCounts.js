@@ -1,10 +1,10 @@
 import { fetchUser } from "./sportsee.api";
 import formatNumberWithCommas from "../helper/formatNumberWithCommas";
 
-export async function getUserCounts(userId) {
+export async function getUserCounts(userId, sourceAPI) {
 
-    const user = await fetchUser(userId);
-    const countsObject = await user.data.keyData;
+    const user = await fetchUser(userId, sourceAPI);
+    const countsObject = await user.keyData;
     const countsArray = Object.entries(countsObject);
 
     const counts = [];

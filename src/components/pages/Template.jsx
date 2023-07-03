@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../header/Header';
 import SideBar from '../side/SideBar';
+import { DataSourceProvider } from '../../contexts/DataSourceContext';
 
 function Template() {
 	return (
@@ -8,7 +9,9 @@ function Template() {
 			<Header />
 			<div className="side-main-wrapper">
 				<SideBar />
-				<Outlet />
+				<DataSourceProvider>
+					<Outlet />
+				</DataSourceProvider>
 			</div>	
 		</>
 	);

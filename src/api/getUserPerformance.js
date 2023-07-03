@@ -1,10 +1,10 @@
 import { fetchUserPerformance } from "./sportsee.api";
 
-export async function getUserPerformance(userId) {
+export async function getUserPerformance(userId, sourceAPI) {
 
-    const rawUserPerformance = await fetchUserPerformance(userId);
+    const rawUserPerformance = await fetchUserPerformance(userId, sourceAPI);
 
-    const performanceArray = await rawUserPerformance.data.data;
+    const performanceArray = await rawUserPerformance.data;
 
     const performance = [];
 

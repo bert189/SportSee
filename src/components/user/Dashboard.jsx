@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getUserCounts } from "../../api/getUserCounts";
 import { getUserActivity } from "../../api/getUserAcivity";
@@ -10,6 +10,7 @@ import Activity from "./Activity";
 import Score from "./Score";
 import Performance from "./Performance";
 import Count from "./Count";
+import { DataSourceContext } from "../../contexts/DataSourceContext";
 
 
 function Dashboard() {
@@ -23,15 +24,20 @@ function Dashboard() {
     const [userSessions, setUserSessions] = useState();
     const [userPerformance, setUserPerformance] = useState();
     const [userScore, setUserScore] = useState();
+
+    const {dataSourceIsAPI} = useContext(DataSourceContext);
+    const [sourceAPI, setSourceAPI] = useState(dataSourceIsAPI);
+
+    // const sourceAPI = false;
     
     useEffect(() => {
         async function load() {
             try {
-                setUserCounts(await getUserCounts(userId));
-                setUserActivity(await getUserActivity(userId));
-                setUserSessions(await getUserSessions(userId));
-                setUserPerformance(await getUserPerformance(userId));
-                setUserScore(await getUserScore(userId));             
+                setUserCounts(await getUserCounts(userId, sourceAPI));
+                setUserActivity(await getUserActivity(userId, sourceAPI));
+                setUserSessions(await getUserSessions(userId, sourceAPI));
+                setUserPerformance(await getUserPerformance(userId, sourceAPI));
+                setUserScore(await getUserScore(userId, sourceAPI));             
             }
             catch(error) {
                 console.error('Erreur lors de la récupération des données :', error);
@@ -39,8 +45,12 @@ function Dashboard() {
                 return null;
             }
         }
-        load();
-    }, [])
+        load();        
+    }, [userId, sourceAPI])
+
+    useEffect(() => {
+        setSourceAPI(dataSourceIsAPI);
+    }, [sourceAPI, dataSourceIsAPI]);
 
     
     return (

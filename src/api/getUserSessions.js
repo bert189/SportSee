@@ -1,10 +1,10 @@
 
 import { fetchUserSessions } from "./sportsee.api";
 
-export async function getUserSessions(userId) {
+export async function getUserSessions(userId, sourceAPI) {
 
-    const rawUserSessions = await fetchUserSessions(userId);
-    const userSessions = await rawUserSessions.data.sessions;
+    const rawUserSessions = await fetchUserSessions(userId, sourceAPI);
+    const userSessions = await rawUserSessions.sessions;
 
     const sessions = [];
 
