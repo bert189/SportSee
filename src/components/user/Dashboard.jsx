@@ -28,8 +28,7 @@ function Dashboard() {
     const {dataSourceIsAPI} = useContext(DataSourceContext);
     const [sourceAPI, setSourceAPI] = useState(dataSourceIsAPI);
 
-    // const sourceAPI = false;
-    
+  
     useEffect(() => {
         async function load() {
             try {

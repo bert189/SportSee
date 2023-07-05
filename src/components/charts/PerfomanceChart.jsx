@@ -2,7 +2,6 @@ import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip } from 'recharts';
 
 
-
 function PerformanceChart({data}) {
     
     return (
